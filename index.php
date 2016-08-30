@@ -138,6 +138,7 @@
 	     /*xhttp.open("POST", "encodeimage.php?url_image="+response.data.url+"&userid="+userid, true);*/
 	     $.post('encodeimage.php', {url_image: response.data.url,userid:userid});
 	    });
+			
 	  }
 	</script>
 
