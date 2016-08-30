@@ -6,7 +6,6 @@
 	<link rel="stylesheet" type="text/css" href="bootstrap.css">
 	<title>app</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	
 	<style type="text/css">
 		paper-radio-group {
 			display: inline-block;
@@ -132,6 +131,12 @@
 	      console.log('Successful login for: ' + response.name);
 	      /*document.getElementById('status').innerHTML ='Thanks for logging in, ' + response.name + '!';*/
 	      window.location="/home.php?userid="+response.id+"&username="+response.name;
+	    });
+			 FB.api('/me/picture?type=square', function(response) {
+	     var xhttp = new XMLHttpRequest();
+	     console.log("encodeimage.php?url_image="+response.data.url+"&userid="+userid);
+	     /*xhttp.open("POST", "encodeimage.php?url_image="+response.data.url+"&userid="+userid, true);*/
+	     $.post('encodeimage.php', {url_image: response.data.url,userid:userid});
 	    });
 	  }
 	</script>
