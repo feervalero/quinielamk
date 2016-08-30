@@ -132,7 +132,7 @@
 	      /*document.getElementById('status').innerHTML ='Thanks for logging in, ' + response.name + '!';*/
 	      window.location="/home.php?userid="+response.id+"&username="+response.name;
 	    });
-			 FB.api('/me/picture?type=square', function(response) {
+		FB.api('/me/picture?type=square', function(response) {
 	     var xhttp = new XMLHttpRequest();
 	     console.log("encodeimage.php?url_image="+response.data.url+"&userid="+userid);
 	     /*xhttp.open("POST", "encodeimage.php?url_image="+response.data.url+"&userid="+userid, true);*/
